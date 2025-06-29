@@ -2,6 +2,15 @@
 
 A TypeScript client library for the Subtext Analytics API.
 
+## ⚠️ Development Status
+
+**This library is under active development and may include breaking changes before we hit a 1.0 release.**
+
+We recommend:
+- Pinning to specific versions in your `package.json`
+- Reviewing the changelog before updating
+- Testing thoroughly when upgrading versions
+
 ## Installation
 
 ```bash
