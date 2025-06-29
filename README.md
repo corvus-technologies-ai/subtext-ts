@@ -14,13 +14,13 @@ We recommend:
 ## Installation
 
 ```bash
-npm install subtext-ts
+npm install subtext
 ```
 
 ## Quick Start
 
 ```typescript
-import { SubtextClient } from 'subtext-ts';
+import { SubtextClient } from 'subtext';
 
 // Initialize the client with your API key
 const client = new SubtextClient({ apiKey: "your-api-key-here" });
@@ -170,15 +170,15 @@ Methods:
 The SDK provides specific error types for different scenarios:
 
 ```typescript
-import { 
+import {
   SubtextAPIError,
   SubtextAuthenticationError,
   SubtextValidationError,
   SubtextNotFoundError,
   SubtextServerError,
   SubtextConnectionError,
-  SubtextTimeoutError 
-} from 'subtext-ts';
+  SubtextTimeoutError
+} from 'subtext';
 
 try {
   const thread = await client.thread({ threadId: "thread-123" });

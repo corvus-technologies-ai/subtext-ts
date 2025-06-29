@@ -5,7 +5,7 @@
  * 
  * @example
  * ```typescript
- * import { SubtextClient } from 'subtext-ts';
+ * import { SubtextClient } from 'subtext';
  * 
  * const client = new SubtextClient({ apiKey: "your-api-key-here" });
  * 

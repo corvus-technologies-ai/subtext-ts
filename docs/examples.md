@@ -7,7 +7,7 @@ This guide provides practical examples and common usage patterns for the Subtext
 ### Simple Conversation Tracking
 
 ```typescript
-import { SubtextClient } from 'subtext-ts';
+import { SubtextClient } from 'subtext';
 
 const client = new SubtextClient({
   apiKey: process.env.SUBTEXT_API_KEY!
@@ -48,7 +48,7 @@ trackConversation().catch(console.error);
 ### Chatbot Integration
 
 ```typescript
-import { SubtextClient } from 'subtext-ts';
+import { SubtextClient } from 'subtext';
 
 class ChatbotWithAnalytics {
   private subtextClient: SubtextClient;
@@ -126,7 +126,7 @@ runChatbot().catch(console.error);
 ### Batch Processing
 
 ```typescript
-import { SubtextClient } from 'subtext-ts';
+import { SubtextClient } from 'subtext';
 
 async function batchProcessConversations() {
   const client = new SubtextClient({
@@ -190,7 +190,7 @@ batchProcessConversations().catch(console.error);
 ### Error Handling with Retry Logic
 
 ```typescript
-import { SubtextClient, SubtextAPIError, SubtextTimeoutError } from 'subtext-ts';
+import { SubtextClient, SubtextAPIError, SubtextTimeoutError } from 'subtext';
 
 async function robustMessageTracking() {
   const client = new SubtextClient({
@@ -245,7 +245,7 @@ robustMessageTracking().catch(console.error);
 ### Working with Data Objects
 
 ```typescript
-import { SubtextClient } from 'subtext-ts';
+import { SubtextClient } from 'subtext';
 
 async function workWithDataObjects() {
   const client = new SubtextClient({
@@ -314,7 +314,7 @@ workWithDataObjects().catch(console.error);
 
 ```typescript
 import express from 'express';
-import { SubtextClient } from 'subtext-ts';
+import { SubtextClient } from 'subtext';
 
 const app = express();
 const subtextClient = new SubtextClient({
