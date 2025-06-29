@@ -11,7 +11,7 @@ The SDK provides specific exception types to help you handle different error sce
 Base exception for all Subtext API errors.
 
 ```typescript
-import { SubtextAPIError } from 'subtext';
+import { SubtextAPIError } from '@subtextai/subtext';
 
 try {
   // SDK operation
@@ -29,7 +29,7 @@ try {
 Thrown when authentication fails (HTTP 401).
 
 ```typescript
-import { SubtextAuthenticationError } from 'subtext';
+import { SubtextAuthenticationError } from '@subtextai/subtext';
 
 try {
   const thread = await client.thread({ threadId: "test" });
@@ -46,7 +46,7 @@ try {
 Thrown when request validation fails (HTTP 400).
 
 ```typescript
-import { SubtextValidationError } from 'subtext';
+import { SubtextValidationError } from '@subtextai/subtext';
 
 try {
   const message = await client.message({
@@ -68,7 +68,7 @@ try {
 Thrown when a resource is not found (HTTP 404).
 
 ```typescript
-import { SubtextNotFoundError } from 'subtext';
+import { SubtextNotFoundError } from '@subtextai/subtext';
 
 try {
   const message = await client.message({
@@ -91,7 +91,7 @@ try {
 Thrown when there's a server error (HTTP 5xx).
 
 ```typescript
-import { SubtextServerError } from 'subtext';
+import { SubtextServerError } from '@subtextai/subtext';
 
 try {
   const thread = await client.thread({ threadId: "test" });
@@ -109,7 +109,7 @@ try {
 Thrown when there's a connection error.
 
 ```typescript
-import { SubtextConnectionError } from 'subtext';
+import { SubtextConnectionError } from '@subtextai/subtext';
 
 try {
   const thread = await client.thread({ threadId: "test" });
@@ -126,7 +126,7 @@ try {
 Thrown when a request times out.
 
 ```typescript
-import { SubtextTimeoutError } from 'subtext';
+import { SubtextTimeoutError } from '@subtextai/subtext';
 
 try {
   const thread = await client.thread({ threadId: "test" });
@@ -143,7 +143,7 @@ try {
 ### Basic Error Handling
 
 ```typescript
-import { SubtextClient, SubtextAPIError } from 'subtext';
+import { SubtextClient, SubtextAPIError } from '@subtextai/subtext';
 
 async function basicErrorHandling() {
   const client = new SubtextClient({
@@ -178,7 +178,7 @@ import {
   SubtextServerError,
   SubtextConnectionError,
   SubtextTimeoutError
-} from 'subtext';
+} from '@subtextai/subtext';
 
 async function comprehensiveErrorHandling() {
   const client = new SubtextClient({
@@ -237,7 +237,7 @@ async function comprehensiveErrorHandling() {
 ### Retry Logic with Exponential Backoff
 
 ```typescript
-import { SubtextClient, SubtextServerError, SubtextTimeoutError } from 'subtext';
+import { SubtextClient, SubtextServerError, SubtextTimeoutError } from '@subtextai/subtext';
 
 async function withRetry<T>(
   operation: () => Promise<T>,
@@ -292,7 +292,7 @@ async function resilientOperation() {
 ### Graceful Degradation
 
 ```typescript
-import { SubtextClient, SubtextAPIError } from 'subtext';
+import { SubtextClient, SubtextAPIError } from '@subtextai/subtext';
 
 class ResilientSubtextTracker {
   private client: SubtextClient;
@@ -347,7 +347,7 @@ class ResilientSubtextTracker {
 ### Error Logging and Monitoring
 
 ```typescript
-import { SubtextClient, SubtextAPIError } from 'subtext';
+import { SubtextClient, SubtextAPIError } from '@subtextai/subtext';
 
 interface ErrorLog {
   timestamp: string;

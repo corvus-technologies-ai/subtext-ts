@@ -13,19 +13,19 @@ This guide will help you install and set up the Subtext TypeScript SDK in your p
 ### Using npm
 
 ```bash
-npm install subtext
+npm install @subtextai/subtext
 ```
 
 ### Using yarn
 
 ```bash
-yarn add subtext
+yarn add @subtextai/subtext
 ```
 
 ### Using pnpm
 
 ```bash
-pnpm add subtext
+pnpm add @subtextai/subtext
 ```
 
 ## Setup
@@ -53,7 +53,7 @@ SUBTEXT_API_KEY=your-api-key-here
 #### TypeScript
 
 ```typescript
-import { SubtextClient } from 'subtext';
+import { SubtextClient } from '@subtextai/subtext';
 
 const client = new SubtextClient({
   apiKey: process.env.SUBTEXT_API_KEY!
@@ -63,7 +63,7 @@ const client = new SubtextClient({
 #### JavaScript (ES6+)
 
 ```javascript
-import { SubtextClient } from 'subtext';
+import { SubtextClient } from '@subtextai/subtext';
 
 const client = new SubtextClient({
   apiKey: process.env.SUBTEXT_API_KEY
@@ -73,7 +73,7 @@ const client = new SubtextClient({
 #### JavaScript (CommonJS)
 
 ```javascript
-const { SubtextClient } = require('subtext');
+const { SubtextClient } = require('@subtextai/subtext');
 
 const client = new SubtextClient({
   apiKey: process.env.SUBTEXT_API_KEY
@@ -95,7 +95,7 @@ The `SubtextClient` constructor accepts the following options:
 To verify your installation and setup, try this simple test:
 
 ```typescript
-import { SubtextClient } from 'subtext';
+import { SubtextClient } from '@subtextai/subtext';
 
 async function testConnection() {
   const client = new SubtextClient({
@@ -149,7 +149,7 @@ Now that you have the SDK installed and configured:
 ### Common Issues
 
 **"Module not found" error**
-- Ensure you've installed the package: `npm install subtext`
+- Ensure you've installed the package: `npm install @subtextai/subtext`
 - Check your import statement syntax
 
 **"API key is required" error**

@@ -7,7 +7,7 @@ This guide covers configuration options and best practices for the Subtext TypeS
 ### Basic Configuration
 
 ```typescript
-import { SubtextClient } from 'subtext';
+import { SubtextClient } from '@subtextai/subtext';
 
 const client = new SubtextClient({
   apiKey: "your-api-key-here"
@@ -97,6 +97,8 @@ SUBTEXT_DEV_API_KEY=your-development-api-key
 Configuration helper:
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 interface SubtextConfig {
   apiKey: string;
   timeout?: number;
@@ -121,6 +123,8 @@ const client = new SubtextClient(getSubtextConfig());
 ### Multi-Environment Setup
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 interface EnvironmentConfig {
   subtext: {
     apiKey: string;
@@ -164,6 +168,8 @@ const client = new SubtextClient(config.subtext);
 ### Singleton Pattern
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 class SubtextManager {
   private static instance: SubtextClient;
 
@@ -186,6 +192,8 @@ const client = SubtextManager.getInstance();
 ### Factory Pattern
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 class SubtextClientFactory {
   static createClient(environment: 'dev' | 'staging' | 'prod'): SubtextClient {
     const configs = {
@@ -218,6 +226,7 @@ const client = SubtextClientFactory.createClient('prod');
 
 ```typescript
 import { z } from 'zod';
+import { SubtextClient } from '@subtextai/subtext';
 
 const SubtextConfigSchema = z.object({
   apiKey: z.string().min(1, 'API key is required'),
@@ -249,6 +258,8 @@ try {
 The SDK uses axios internally, which handles connection pooling automatically. You can optimize by reusing client instances:
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 // ✅ Good: Reuse client instances
 const client = new SubtextClient({ apiKey: process.env.SUBTEXT_API_KEY! });
 
@@ -272,6 +283,8 @@ async function trackMultipleMessagesBad() {
 Configure timeouts based on your use case:
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 // Real-time chat applications
 const realtimeClient = new SubtextClient({
   apiKey: process.env.SUBTEXT_API_KEY!,
@@ -299,6 +312,8 @@ const batchClient = new SubtextClient({
 ### API Key Management
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 // ✅ Good: Use environment variables
 const client = new SubtextClient({
   apiKey: process.env.SUBTEXT_API_KEY!
@@ -320,6 +335,8 @@ const client = new SubtextClient({
 ### Environment Separation
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 // Separate API keys for different environments
 const getApiKey = () => {
   switch (process.env.NODE_ENV) {
@@ -347,6 +364,8 @@ const client = new SubtextClient({
 
 ```typescript
 // test-utils.ts
+import { SubtextClient } from '@subtextai/subtext';
+
 export function createTestClient(): SubtextClient {
   return new SubtextClient({
     apiKey: 'test-api-key',

@@ -23,6 +23,8 @@ new SubtextClient(options: SubtextClientOptions)
 #### Example
 
 ```typescript
+import { SubtextClient } from '@subtextai/subtext';
+
 const client = new SubtextClient({
   apiKey: "your-api-key-here"
 });
