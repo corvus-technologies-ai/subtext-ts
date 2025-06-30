@@ -71,7 +71,7 @@ export class SubtextClient {
     }
 
     this.apiKey = options.apiKey;
-    this.baseUrl = (options.baseUrl || 'https://app.trysubtext.com/api').replace(/\/$/, '');
+    this.baseUrl = (options.baseUrl || 'https://app.trysubtext.com').replace(/\/$/, '');
     this.timeout = options.timeout || 30000;
     this.maxRetries = options.maxRetries || 3;
 
